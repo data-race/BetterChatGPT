@@ -17,11 +17,8 @@ export const getChatCompletion = async (
 
   if (isAzureEndpoint(endpoint) && apiKey) {
     headers['api-key'] = apiKey;
-
-    const gpt3forAzure = 'gpt-35-turbo';
-    const model =
-      config.model === 'gpt-3.5-turbo' ? gpt3forAzure : config.model;
-    const apiVersion = '2023-03-15-preview';
+    const model = 'zihan-gpt35-deployment'
+    const apiVersion = '2023-05-15';
 
     const path = `openai/deployments/${model}/chat/completions?api-version=${apiVersion}`;
 
@@ -64,10 +61,8 @@ export const getChatCompletionStream = async (
   if (isAzureEndpoint(endpoint) && apiKey) {
     headers['api-key'] = apiKey;
 
-    const gpt3forAzure = 'gpt-35-turbo';
-    const model =
-      config.model === 'gpt-3.5-turbo' ? gpt3forAzure : config.model;
-    const apiVersion = '2023-03-15-preview';
+    const model = 'zihan-gpt35-deployment'
+    const apiVersion = '2023-05-15';
 
     const path = `openai/deployments/${model}/chat/completions?api-version=${apiVersion}`;
 
